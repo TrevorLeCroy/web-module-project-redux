@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { connect } from 'react-redux';
 
 import MovieListItem from './MovieListItem';
@@ -22,7 +22,7 @@ const MovieList = (props)=> {
 
                 <tbody>
                     {
-                        movies.map(movie=><MovieListItem key={movie.id} movie={movie}/>)
+                        movies.map(movie => <MovieListItem key={movie.id} movie={movie}/>)
                     }
                 </tbody>
             </table>
@@ -33,7 +33,7 @@ const MovieList = (props)=> {
 }
 const mapStateToProps = state => {
     return {
-        movies: state.movies
+        movies: state.movieReducer.movies
     }
 }
 
